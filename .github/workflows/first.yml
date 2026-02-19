@@ -1,21 +1,13 @@
-name: first
+name: First Workflow
 
-on: [push]
+on: workflow_dispatch
 
 jobs:
-    job1:
-        name: First Job
-        runs-on: ubuntu-latest
-        steps:
-            - name: Step One
-              uses: actions/checkout@v4
-            - name: Step Two
-              run: env | sort 
-    job2:
-        name: Second Job
-        runs-on: windows-latest
-        steps:
-            - name: Step One
-              uses: actions/checkout@v4
-            - name: Step Two
-              run: "Get-ChildItem Env: | Sort-Object Name"
+    first-job:
+         runs-on: ubuntu-latest
+         steps:
+            - name: Print greeting
+              run: echo "Hello World!"
+              
+            - name: Print goodbye
+              run: echo "Done - bye!"
